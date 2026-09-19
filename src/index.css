@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #081312;
+    --text-primary: #F5F1EA;
+    --accent-gold: #C6A868;
+  }
+
+  * {
+    border-color: rgba(198, 168, 104, 0.14);
+  }
+
+  html {
+    background-color: #081312;
+    color: #F5F1EA;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #081312;
+    color: #F5F1EA;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Sleek luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #081312;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1C2E2A;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C6A868;
+  }
+}
+
+/* Custom luxury typography utilities */
+.font-serif-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-luxury {
+  font-family: 'Plus Jakarta Sans', Inter, sans-serif;
+}
+
+/* Subtle hairline gold borders */
+.hairline-gold {
+  border-color: rgba(198, 168, 104, 0.2);
+}
+
+.hairline-gold-t {
+  border-top: 1px solid rgba(198, 168, 104, 0.2);
+}
+
+.hairline-gold-b {
+  border-bottom: 1px solid rgba(198, 168, 104, 0.2);
+}
+
+.hairline-ivory {
+  border-color: rgba(245, 241, 234, 0.08);
+}
+
+/* Glassmorphism luxury panel */
+.glass-panel {
+  background: rgba(8, 19, 18, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(32, 51, 46, 0.85);
+}
+
+.glass-nav {
+  background: rgba(8, 19, 18, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(198, 168, 104, 0.12);
+}
+
+/* Custom image zoom animation */
+.img-zoom-hover {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .img-zoom-hover {
+  transform: scale(1.06);
+}
+
+/* Subtle text gold gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F5F1EA 0%, #D4BA7E 60%, #C6A868 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-subtle {
+  color: #C6A868;
+}
