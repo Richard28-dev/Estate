@@ -23,8 +23,8 @@ export default function Footer({ onOpenBlueprint, onOpenEnquiry }) {
             <div className="flex items-center gap-3 sm:gap-3.5 mb-6 select-none">
               <img
                 src="./emblem.png"
-                alt="Secure Stay Official Crest"
-                className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(198,168,104,0.25)]"
+                alt="Secure Stay Official Logo"
+                className="h-11 sm:h-12 w-11 sm:w-12 rounded-2xl object-contain bg-white p-1 border border-[#C6A868]/40 shadow-[0_4px_16px_rgba(0,0,0,0.6),0_0_15px_rgba(198,168,104,0.2)]"
               />
               <div className="w-[1.5px] h-9 sm:h-10 bg-gradient-to-b from-[#C6A868]/30 via-[#D4BA7E] to-[#C6A868]/30 rounded-full shrink-0 shadow-[0_0_6px_rgba(212,186,126,0.25)]" />
               
