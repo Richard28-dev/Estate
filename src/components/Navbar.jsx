@@ -86,25 +86,17 @@ export default function Navbar({ onOpenLogin, onOpenEnquiry, onOpenBlueprint }) 
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
           
-          {/* Brand Identity / Logo (SS Real Estates) */}
+          {/* Brand Identity / Logo (Secure Stay Private Limited) */}
           <a
             href="#"
             onClick={(e) => handleNavClick(e, { label: 'Home', href: '#' })}
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3 group transition-transform duration-300 hover:scale-[1.02]"
           >
-            <div className="w-10 h-10 rounded-full border border-[#C6A868] flex items-center justify-center transition-all duration-300 group-hover:bg-[#C6A868]/10 group-hover:shadow-[0_0_12px_rgba(198,168,104,0.3)]">
-              <span className="font-serif-display text-base tracking-widest text-[#C6A868] font-normal italic">
-                SS
-              </span>
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="font-serif-display text-lg sm:text-xl tracking-[0.25em] text-[#F5F1EA] font-medium leading-none group-hover:text-[#D4BA7E] transition-colors">
-                SECURE STAY
-              </span>
-              <span className="text-[8.5px] tracking-[0.32em] text-[#C6A868] uppercase font-sans font-medium mt-1">
-                REAL ESTATES
-              </span>
-            </div>
+            <img
+              src="./logo.png"
+              alt="Secure Stay Private Limited — Managed with Trust • Delivered with Care"
+              className="h-11 sm:h-13 md:h-14 w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(198,168,104,0.3)]"
+            />
           </a>
 
           {/* Center Links (Stylized Editorial Typography with Active Scroll Indicator) */}

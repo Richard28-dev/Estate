@@ -19,17 +19,11 @@ export default function Footer({ onOpenBlueprint }) {
           
           <div className="lg:col-span-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full border border-[#C6A868] flex items-center justify-center">
-                <span className="font-serif-display text-sm tracking-wider text-[#C6A868] italic">SS</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif-display text-2xl tracking-[0.25em] text-[#F5F1EA] uppercase font-light leading-none">
-                  SECURE STAY
-                </span>
-                <span className="text-[8.5px] tracking-[0.32em] text-[#C6A868] uppercase font-sans font-medium mt-1">
-                  REAL ESTATES
-                </span>
-              </div>
+              <img
+                src="./logo.png"
+                alt="Secure Stay Private Limited — Managed with Trust • Delivered with Care"
+                className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(198,168,104,0.2)]"
+              />
             </div>
             <p className="text-[#8F9C98] font-light max-w-md text-xs leading-relaxed mb-6">
               A private real estate office dedicated to the acquisition, stewardship, and discreet disposition of trophy residential assets across India and premier international capital centres.
