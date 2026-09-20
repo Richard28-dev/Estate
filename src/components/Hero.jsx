@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { ArrowRight, Users, Building2, TrendingUp, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, Users, Building2, TrendingUp, ShieldCheck } from 'lucide-react';
 
 function AnimatedMetric({ target, decimals = 0, suffix = '' }) {
   const [val, setVal] = useState(0);
@@ -168,20 +168,8 @@ export default function Hero({ onSearchSubmit, currentCurrency }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full bg-[#061210]/90 backdrop-blur-3xl border border-[#C6A868]/40 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-[0_30px_80px_rgba(0,0,0,0.85),0_0_35px_rgba(198,168,104,0.12),inset_0_1px_2px_rgba(255,255,255,0.06)] transition-all duration-500 hover:border-[#C6A868]/65 before:absolute before:inset-x-12 before:top-0 before:h-[1.5px] before:bg-gradient-to-r before:from-transparent before:via-[#E2C98E]/80 before:to-transparent"
+          className="relative w-full bg-[#061210]/90 backdrop-blur-3xl border border-[#C6A868]/40 rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-[0_30px_80px_rgba(0,0,0,0.85),0_0_35px_rgba(198,168,104,0.12),inset_0_1px_2px_rgba(255,255,255,0.06)] transition-all duration-500 hover:border-[#C6A868]/65 before:absolute before:inset-x-12 before:top-0 before:h-[1.5px] before:bg-gradient-to-r before:from-transparent before:via-[#E2C98E]/80 before:to-transparent"
         >
-          {/* Subtle Institutional Eyebrow Header */}
-          <div className="flex items-center justify-center gap-2.5 mb-6">
-            <div className="h-[1px] w-8 sm:w-16 bg-gradient-to-r from-transparent to-[#C6A868]/60" />
-            <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#C6A868]/10 border border-[#C6A868]/30">
-              <Sparkles className="w-3 h-3 text-[#D4BA7E]" />
-              <span className="text-[9px] sm:text-[10px] uppercase font-sans tracking-[0.28em] text-[#D4BA7E] font-medium">
-                Verified Portfolio Benchmarks
-              </span>
-            </div>
-            <div className="h-[1px] w-8 sm:w-16 bg-gradient-to-l from-transparent to-[#C6A868]/60" />
-          </div>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 items-stretch divide-y md:divide-y-0 md:divide-x divide-[#C6A868]/20">
             {metrics.map((metric, index) => {
               const Icon = metric.icon;
