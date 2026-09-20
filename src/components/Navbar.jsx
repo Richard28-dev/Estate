@@ -92,12 +92,12 @@ export default function Navbar({ onOpenLogin, onOpenEnquiry, onOpenBlueprint }) 
             onClick={(e) => handleNavClick(e, { label: 'Home', href: '#' })}
             className="flex items-center gap-3 sm:gap-3.5 group transition-all duration-300 select-none py-1"
           >
-            {/* High-Resolution Clean Emblem on White Background */}
+            {/* Seamless Transparent Monogram Emblem */}
             <div className="relative shrink-0 flex items-center justify-center">
               <img
                 src="./emblem.png"
                 alt="Secure Stay Official Logo"
-                className="h-11 sm:h-12 w-11 sm:w-12 rounded-2xl object-contain bg-white p-1 border border-[#C6A868]/40 shadow-[0_4px_16px_rgba(0,0,0,0.6),0_0_15px_rgba(198,168,104,0.2)] transition-transform duration-300 group-hover:scale-105"
+                className="h-10 sm:h-11 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(212,186,126,0.25)] transition-transform duration-300 group-hover:scale-105"
               />
             </div>
 
