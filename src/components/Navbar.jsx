@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar({ onOpenLogin, onOpenEnquiry, onOpenBlueprint }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -152,26 +152,8 @@ export default function Navbar({ onOpenLogin, onOpenEnquiry, onOpenBlueprint }) 
             })}
           </nav>
 
-          {/* Right Action Area - ONLY LOGIN AS REQUESTED */}
-          <div className="hidden sm:flex items-center">
-            <button
-              onClick={onOpenLogin}
-              className="bg-[#C6A868] hover:bg-[#D4BA7E] text-[#081312] font-semibold text-xs sm:text-sm px-6 py-2.5 rounded-md flex items-center gap-2 transition-all shadow-sm active:scale-95 tracking-wide font-sans"
-            >
-              <span>Login</span>
-              <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
-            </button>
-          </div>
-
           {/* Mobile Menu Toggle */}
-          <div className="flex md:hidden items-center gap-3">
-            <button
-              onClick={onOpenLogin}
-              className="bg-[#C6A868] text-[#081312] text-xs px-4 py-2 rounded-md font-semibold"
-            >
-              Login
-            </button>
-
+          <div className="flex md:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-[#F5F1EA] hover:text-[#C6A868] transition-colors"
@@ -216,19 +198,6 @@ export default function Navbar({ onOpenLogin, onOpenEnquiry, onOpenBlueprint }) 
                   </a>
                 );
               })}
-            </div>
-
-            <div className="border-t border-[#1C2E2A] pt-6 flex flex-col gap-4">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenLogin();
-                }}
-                className="w-full py-3.5 bg-[#C6A868] text-[#081312] font-sans text-xs uppercase tracking-[0.2em] font-semibold rounded-md flex items-center justify-center gap-2"
-              >
-                <span>Login</span>
-                <ArrowRight className="w-4 h-4 stroke-[2]" />
-              </button>
             </div>
           </motion.div>
         )}

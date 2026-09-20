@@ -115,19 +115,6 @@ export default function Hero({ onSearchSubmit, currentCurrency }) {
         className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 w-full my-auto"
       >
         <div className="max-w-2xl text-left">
-          {/* Pre-header with horizontal line */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-3 mb-5 sm:mb-6"
-          >
-            <span className="w-8 sm:w-10 h-[2px] bg-[#C6A868]" />
-            <span className="text-[11px] sm:text-xs font-sans uppercase tracking-[0.25em] text-[#E5E0D6] font-medium">
-              PREMIUM PROPERTIES &nbsp;/&nbsp; TRUSTED PARTNERS
-            </span>
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
