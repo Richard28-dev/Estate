@@ -90,35 +90,38 @@ export default function Navbar({ onOpenLogin, onOpenEnquiry, onOpenBlueprint }) 
           <a
             href="#"
             onClick={(e) => handleNavClick(e, { label: 'Home', href: '#' })}
-            className="flex items-center gap-3 sm:gap-3.5 group transition-transform duration-300 hover:scale-[1.01]"
+            className="flex items-center gap-3 sm:gap-3.5 group transition-all duration-300 select-none py-1"
           >
             {/* High-Resolution Clean Emblem */}
             <div className="relative shrink-0 flex items-center justify-center">
               <img
                 src="./emblem.png"
                 alt="Secure Stay Official Crest"
-                className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(198,168,104,0.3)]"
+                className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(198,168,104,0.25)] transition-transform duration-300 group-hover:scale-105"
               />
             </div>
 
             {/* Vertical Golden Separator Line */}
-            <div className="w-[1.5px] h-9 bg-gradient-to-b from-transparent via-[#C6A868] to-transparent shrink-0 opacity-80" />
+            <div className="w-[1.5px] h-9 sm:h-10 bg-gradient-to-b from-[#C6A868]/30 via-[#D4BA7E] to-[#C6A868]/30 rounded-full shrink-0 shadow-[0_0_6px_rgba(212,186,126,0.25)]" />
 
-            {/* Razor-Sharp High-DPI Typography */}
-            <div className="flex flex-col text-left justify-center select-none">
-              <span className="font-serif-display text-[19px] sm:text-[22px] font-bold tracking-[0.16em] text-[#F5F1EA] leading-none group-hover:text-[#D4BA7E] transition-colors">
+            {/* Razor-Sharp High-DPI Typography - Balanced and Center-Aligned */}
+            <div className="flex flex-col items-center justify-center text-center">
+              {/* Line 1: SECURE STAY */}
+              <span className="font-serif-display text-[19px] sm:text-[21px] font-bold tracking-[0.16em] text-[#F5F1EA] leading-none group-hover:text-[#D4BA7E] transition-colors whitespace-nowrap">
                 SECURE STAY
               </span>
 
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className="w-2.5 sm:w-3.5 h-[1px] bg-[#C6A868]" />
-                <span className="text-[8.5px] sm:text-[9.5px] tracking-[0.26em] text-[#D4BA7E] font-sans font-semibold uppercase leading-none">
+              {/* Line 2: — PRIVATE LIMITED — (Equal flanking lines extending symmetrically) */}
+              <div className="flex items-center justify-center w-full gap-2 my-1">
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C6A868] to-[#C6A868]" />
+                <span className="text-[8.5px] sm:text-[9.5px] tracking-[0.24em] text-[#D4BA7E] font-sans font-semibold uppercase leading-none whitespace-nowrap">
                   PRIVATE LIMITED
                 </span>
-                <span className="w-2.5 sm:w-3.5 h-[1px] bg-[#C6A868]" />
+                <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#C6A868] to-[#C6A868]" />
               </div>
 
-              <span className="text-[8px] sm:text-[8.5px] tracking-[0.06em] text-[#9EA9A6] font-sans font-normal mt-0.5 leading-tight">
+              {/* Line 3: Managed with Trust • Delivered with Care */}
+              <span className="text-[7.5px] sm:text-[8.5px] tracking-[0.05em] text-[#9EA9A6] font-sans font-normal leading-none whitespace-nowrap">
                 Managed with Trust • Delivered with Care
               </span>
             </div>
