@@ -18,12 +18,28 @@ export default function Footer({ onOpenBlueprint }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#1C2E2A] items-start">
           
           <div className="lg:col-span-6">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 sm:gap-3.5 mb-5 select-none">
               <img
-                src="./logo.png"
-                alt="Secure Stay Private Limited — Managed with Trust • Delivered with Care"
-                className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(198,168,104,0.2)]"
+                src="./emblem.png"
+                alt="Secure Stay Official Crest"
+                className="h-10 sm:h-11 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(198,168,104,0.3)]"
               />
+              <div className="w-[1.5px] h-8 bg-gradient-to-b from-transparent via-[#C6A868] to-transparent shrink-0 opacity-80" />
+              <div className="flex flex-col text-left justify-center">
+                <span className="font-serif-display text-[18px] sm:text-[20px] font-bold tracking-[0.16em] text-[#F5F1EA] leading-none">
+                  SECURE STAY
+                </span>
+                <div className="flex items-center gap-1.5 mt-1">
+                  <span className="w-2.5 h-[1px] bg-[#C6A868]" />
+                  <span className="text-[8px] sm:text-[9px] tracking-[0.25em] text-[#D4BA7E] font-sans font-semibold uppercase leading-none">
+                    PRIVATE LIMITED
+                  </span>
+                  <span className="w-2.5 h-[1px] bg-[#C6A868]" />
+                </div>
+                <span className="text-[7.5px] sm:text-[8px] tracking-[0.05em] text-[#8F9C98] font-sans font-normal mt-0.5 leading-tight">
+                  Managed with Trust • Delivered with Care
+                </span>
+              </div>
             </div>
             <p className="text-[#8F9C98] font-light max-w-md text-xs leading-relaxed mb-6">
               A private real estate office dedicated to the acquisition, stewardship, and discreet disposition of trophy residential assets across India and premier international capital centres.

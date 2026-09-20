@@ -86,17 +86,42 @@ export default function Navbar({ onOpenLogin, onOpenEnquiry, onOpenBlueprint }) 
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
           
-          {/* Brand Identity / Logo (Secure Stay Private Limited) */}
+          {/* Brand Identity / Official Logo (Secure Stay Private Limited) */}
           <a
             href="#"
             onClick={(e) => handleNavClick(e, { label: 'Home', href: '#' })}
-            className="flex items-center gap-3 group transition-transform duration-300 hover:scale-[1.02]"
+            className="flex items-center gap-3 sm:gap-3.5 group transition-transform duration-300 hover:scale-[1.01]"
           >
-            <img
-              src="./logo.png"
-              alt="Secure Stay Private Limited — Managed with Trust • Delivered with Care"
-              className="h-11 sm:h-13 md:h-14 w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(198,168,104,0.3)]"
-            />
+            {/* High-Resolution Clean Emblem */}
+            <div className="relative shrink-0 flex items-center justify-center">
+              <img
+                src="./emblem.png"
+                alt="Secure Stay Official Crest"
+                className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(198,168,104,0.3)]"
+              />
+            </div>
+
+            {/* Vertical Golden Separator Line */}
+            <div className="w-[1.5px] h-9 bg-gradient-to-b from-transparent via-[#C6A868] to-transparent shrink-0 opacity-80" />
+
+            {/* Razor-Sharp High-DPI Typography */}
+            <div className="flex flex-col text-left justify-center select-none">
+              <span className="font-serif-display text-[19px] sm:text-[22px] font-bold tracking-[0.16em] text-[#F5F1EA] leading-none group-hover:text-[#D4BA7E] transition-colors">
+                SECURE STAY
+              </span>
+
+              <div className="flex items-center gap-1.5 mt-1">
+                <span className="w-2.5 sm:w-3.5 h-[1px] bg-[#C6A868]" />
+                <span className="text-[8.5px] sm:text-[9.5px] tracking-[0.26em] text-[#D4BA7E] font-sans font-semibold uppercase leading-none">
+                  PRIVATE LIMITED
+                </span>
+                <span className="w-2.5 sm:w-3.5 h-[1px] bg-[#C6A868]" />
+              </div>
+
+              <span className="text-[8px] sm:text-[8.5px] tracking-[0.06em] text-[#9EA9A6] font-sans font-normal mt-0.5 leading-tight">
+                Managed with Trust • Delivered with Care
+              </span>
+            </div>
           </a>
 
           {/* Center Links (Stylized Editorial Typography with Active Scroll Indicator) */}
