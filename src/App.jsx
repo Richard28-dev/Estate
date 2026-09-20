@@ -148,9 +148,10 @@ export default function App() {
         onOpenEnquiry={() => setIsEnquiryOpen(true)}
       />
 
-      {/* 10. Refined Footer with Desks & Legal Disclaimers */}
+      {/* 10. Refined Footer matching user reference */}
       <Footer
         onOpenBlueprint={() => setIsBlueprintOpen(true)}
+        onOpenEnquiry={() => setIsEnquiryOpen(true)}
       />
 
       {/* Interactive Modals */}

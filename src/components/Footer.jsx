@@ -1,185 +1,218 @@
-import React, { useState } from 'react';
-import { ArrowUpRight, ShieldCheck, Mail, Check } from 'lucide-react';
+import React from 'react';
+import { ShieldCheck } from 'lucide-react';
 
-export default function Footer({ onOpenBlueprint }) {
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleNewsletter = (e) => {
+export default function Footer({ onOpenBlueprint, onOpenEnquiry }) {
+  const scrollToSection = (e, id) => {
     e.preventDefault();
-    if (newsletterEmail) setSubscribed(true);
+    const elem = document.getElementById(id);
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <footer className="bg-[#050E0D] text-[#F5F1EA] pt-20 pb-12 border-t border-[#1C2E2A] text-xs font-sans">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="bg-[#06121E] text-[#F5F1EA] pt-20 pb-12 border-t border-[#122334] font-sans antialiased">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
-        {/* Top Tier: Brand Statement & Newsletter */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#1C2E2A] items-start">
+        {/* Main 3-Column Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 pb-16 items-start">
           
-          <div className="lg:col-span-6">
-            <div className="flex items-center gap-3 sm:gap-3.5 mb-5 select-none">
+          {/* Column 1: Brand Logo, Description, Registered Corporate Entity */}
+          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start text-left">
+            {/* Logo */}
+            <div className="flex items-center gap-3 sm:gap-3.5 mb-6 select-none">
               <img
                 src="./emblem.png"
                 alt="Secure Stay Official Crest"
-                className="h-10 sm:h-11 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(198,168,104,0.3)]"
+                className="h-11 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(198,168,104,0.25)]"
               />
-              <div className="w-[1.5px] h-8 bg-gradient-to-b from-transparent via-[#C6A868] to-transparent shrink-0 opacity-80" />
-              <div className="flex flex-col text-left justify-center">
-                <span className="font-serif-display text-[18px] sm:text-[20px] font-bold tracking-[0.16em] text-[#F5F1EA] leading-none">
+              <div className="w-[1.5px] h-9 sm:h-10 bg-gradient-to-b from-[#C6A868]/30 via-[#D4BA7E] to-[#C6A868]/30 rounded-full shrink-0 shadow-[0_0_6px_rgba(212,186,126,0.25)]" />
+              
+              <div className="flex flex-col items-center justify-center text-center">
+                <span className="font-serif-display text-[19px] sm:text-[21px] font-bold tracking-[0.16em] text-[#F5F1EA] leading-none whitespace-nowrap">
                   SECURE STAY
                 </span>
-                <div className="flex items-center gap-1.5 mt-1">
-                  <span className="w-2.5 h-[1px] bg-[#C6A868]" />
-                  <span className="text-[8px] sm:text-[9px] tracking-[0.25em] text-[#D4BA7E] font-sans font-semibold uppercase leading-none">
+                <div className="flex items-center justify-center w-full gap-2 my-1">
+                  <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C6A868] to-[#C6A868]" />
+                  <span className="text-[8.5px] sm:text-[9.5px] tracking-[0.24em] text-[#D4BA7E] font-sans font-semibold uppercase leading-none whitespace-nowrap">
                     PRIVATE LIMITED
                   </span>
-                  <span className="w-2.5 h-[1px] bg-[#C6A868]" />
+                  <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#C6A868] to-[#C6A868]" />
                 </div>
-                <span className="text-[7.5px] sm:text-[8px] tracking-[0.05em] text-[#8F9C98] font-sans font-normal mt-0.5 leading-tight">
+                <span className="text-[7.5px] sm:text-[8.5px] tracking-[0.05em] text-[#9EA9A6] font-sans font-normal leading-none whitespace-nowrap">
                   Managed with Trust • Delivered with Care
                 </span>
               </div>
             </div>
-            <p className="text-[#8F9C98] font-light max-w-md text-xs leading-relaxed mb-6">
-              A private real estate office dedicated to the acquisition, stewardship, and discreet disposition of trophy residential assets across India and premier international capital centres.
+
+            {/* Paragraph Text */}
+            <p className="text-sm sm:text-[14.5px] text-[#A6B7C6] font-normal leading-relaxed max-w-md mb-6">
+              India's premier end-to-end residential property services company. Providing guaranteed on-time rent, 100% verified background checks, and seamless property care.
             </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#1C2E2A] bg-[#081312] text-[10px] text-[#D4BA7E] uppercase tracking-wider rounded-sm">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#C6A868]" />
-              Institutional Due Diligence Standards
+
+            {/* Registered Corporate Entity Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-[#C6A868]/30 bg-[#0A1B2C]/90 text-xs sm:text-[13px] text-[#E5ECF2] shadow-[0_4px_15px_rgba(0,0,0,0.3)]">
+              <ShieldCheck className="w-4 h-4 text-[#D4BA7E] stroke-[2]" />
+              <span className="font-medium tracking-wide">Registered Corporate Entity</span>
             </div>
           </div>
 
-          <div className="lg:col-span-6">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[#C6A868] font-medium block mb-2">
-              The Private Gazette
-            </span>
-            <h4 className="font-serif-display text-2xl text-[#F5F1EA] font-light mb-3">
-              Receive Off-Market Market Intelligence
+          {/* Column 2: Quick Links */}
+          <div className="md:col-span-3 lg:col-span-3 lg:pl-6">
+            <h4 className="text-base sm:text-lg font-bold text-[#F5F1EA] mb-1.5 tracking-tight">
+              Quick Links
             </h4>
-            <p className="text-xs text-[#8F9C98] font-light mb-5 max-w-md">
-              A quarterly monograph on prime residential capital flows, discreet transactions, and architectural heritage.
-            </p>
+            <div className="w-7 h-[2px] bg-[#C6A868] mb-6 rounded-full" />
 
-            {subscribed ? (
-              <div className="flex items-center gap-2 text-xs text-[#D4BA7E] py-3">
-                <Check className="w-4 h-4" />
-                <span>You have been added to our private advisory circulation list.</span>
-              </div>
-            ) : (
-              <form onSubmit={handleNewsletter} className="flex max-w-md">
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter confidential email"
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="flex-grow bg-[#0B1715] border border-[#1C2E2A] px-4 py-3 text-xs text-[#F5F1EA] focus:outline-none focus:border-[#C6A868]"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-[#C6A868] hover:bg-[#D4BA7E] text-[#081312] text-[10px] font-semibold uppercase tracking-[0.2em] shrink-0 transition-colors"
+            <ul className="space-y-3.5 text-sm sm:text-[14.5px] text-[#B0C0CE]">
+              <li>
+                <a
+                  href="#why-us"
+                  onClick={(e) => scrollToSection(e, 'why-us')}
+                  className="hover:text-[#D4BA7E] transition-colors block"
                 >
-                  Join
-                </button>
-              </form>
-            )}
-          </div>
-
-        </div>
-
-        {/* Middle Tier: Global Desks & Navigation Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-16 border-b border-[#C9A96E]/15">
-          
-          {/* Mumbai HQ */}
-          <div>
-            <h5 className="font-serif-display text-lg text-[#DFBF85] mb-3">Mumbai Flagship</h5>
-            <p className="text-[#A59E92] leading-relaxed font-light">
-              Level 28, Maker Maxity<br />
-              Bandra Kurla Complex<br />
-              Mumbai 400 051, India<br />
-              <span className="text-[#DFBF85] mt-1 inline-block">+91 22 4980 8800</span>
-            </p>
-          </div>
-
-          {/* New Delhi Desk */}
-          <div>
-            <h5 className="font-serif-display text-lg text-[#DFBF85] mb-3">Delhi NCR Advisory</h5>
-            <p className="text-[#A59E92] leading-relaxed font-light">
-              The Oberoi Advisory Suite<br />
-              Dr. Zakir Hussain Marg<br />
-              New Delhi 110 003, India<br />
-              <span className="text-[#DFBF85] mt-1 inline-block">+91 11 6810 4400</span>
-            </p>
-          </div>
-
-          {/* International Desks */}
-          <div>
-            <h5 className="font-serif-display text-lg text-[#DFBF85] mb-3">International Hubs</h5>
-            <p className="text-[#A59E92] leading-relaxed font-light mb-2">
-              <strong className="text-[#F5F1EA] font-normal">London Mayfair:</strong> 14 Berkeley Street, London W1J 8DX
-            </p>
-            <p className="text-[#A59E92] leading-relaxed font-light">
-              <strong className="text-[#F5F1EA] font-normal">Dubai DIFC:</strong> Gate Precinct 4, Level 5, DIFC
-            </p>
-          </div>
-
-          {/* Directory & Quick Navigation */}
-          <div>
-            <h5 className="font-serif-display text-lg text-[#DFBF85] mb-3">Dossiers & Exploration</h5>
-            <ul className="space-y-2 text-[#A59E92]">
-              <li>
-                <a href="#properties" className="hover:text-[#DFBF85] transition-colors">
-                  Featured Residences
+                  About SecureStay
                 </a>
               </li>
               <li>
-                <a href="#collections" className="hover:text-[#DFBF85] transition-colors">
-                  Curated Collections
-                </a>
-              </li>
-              <li>
-                <a href="#why-us" className="hover:text-[#DFBF85] transition-colors">
-                  Pillars of Assurance
-                </a>
-              </li>
-              <li>
-                <a href="#journal" className="hover:text-[#DFBF85] transition-colors">
-                  Intellectual Capital & Journal
-                </a>
-              </li>
-              <li>
-                <button
-                  onClick={onOpenBlueprint}
-                  className="text-[#DFBF85] hover:underline flex items-center gap-1 text-left"
+                <a
+                  href="#why-us"
+                  onClick={(e) => scrollToSection(e, 'why-us')}
+                  className="hover:text-[#D4BA7E] transition-colors block"
                 >
-                  <span>Inner Pages Blueprint</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </button>
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#properties"
+                  onClick={(e) => scrollToSection(e, 'properties')}
+                  className="hover:text-[#D4BA7E] transition-colors block"
+                >
+                  All Properties
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    if (onOpenEnquiry) {
+                      e.preventDefault();
+                      onOpenEnquiry();
+                    } else {
+                      scrollToSection(e, 'contact');
+                    }
+                  }}
+                  className="hover:text-[#D4BA7E] transition-colors block"
+                >
+                  List Your Property
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Our Services */}
+          <div className="md:col-span-3 lg:col-span-4 lg:pl-4">
+            <h4 className="text-base sm:text-lg font-bold text-[#F5F1EA] mb-1.5 tracking-tight">
+              Our Services
+            </h4>
+            <div className="w-7 h-[2px] bg-[#C6A868] mb-6 rounded-full" />
+
+            <ul className="space-y-3.5 text-sm sm:text-[14.5px] text-[#B0C0CE]">
+              <li>
+                <a
+                  href="#why-us"
+                  onClick={(e) => scrollToSection(e, 'why-us')}
+                  className="hover:text-[#D4BA7E] transition-colors block"
+                >
+                  Guaranteed Rent Payouts
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#why-us"
+                  onClick={(e) => scrollToSection(e, 'why-us')}
+                  className="hover:text-[#D4BA7E] transition-colors block"
+                >
+                  Tenant KYC Verification
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#why-us"
+                  onClick={(e) => scrollToSection(e, 'why-us')}
+                  className="hover:text-[#D4BA7E] transition-colors block"
+                >
+                  Property Inspections & Repairs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#why-us"
+                  onClick={(e) => scrollToSection(e, 'why-us')}
+                  className="hover:text-[#D4BA7E] transition-colors block"
+                >
+                  Legal Rental Agreements
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#properties"
+                  onClick={(e) => scrollToSection(e, 'properties')}
+                  className="hover:text-[#D4BA7E] transition-colors block"
+                >
+                  Zero Brokerage Stays
+                </a>
               </li>
             </ul>
           </div>
 
         </div>
 
-        {/* Bottom Tier: RERA & Regulatory Disclosures */}
-        <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] text-[#A59E92]/70 font-light">
-          
-          <div className="max-w-2xl leading-relaxed">
-            <p>
-              © {new Date().getFullYear()} Secure Stay Private Advisory LLP. All rights reserved. Registered Real Estate Agent RERA: PRM/MUM/RERA/2026/00914. Discretion guaranteed under client mandate. All property details are provided for informational contemplation and do not constitute formal legal tender until conveyance contracts are ratified.
-            </p>
+        {/* Bottom Bar: Copyright & Legal */}
+        <div className="border-t border-[#122334] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-[13px] text-[#869BAE]">
+          <div>
+            © 2026 SecureStay Properties. All rights reserved.
           </div>
 
-          <div className="flex items-center gap-6 shrink-0 text-xs">
-            <a href="#" className="hover:text-[#DFBF85] transition-colors">Privacy Charter</a>
-            <a href="#" className="hover:text-[#DFBF85] transition-colors">NDA Protocol</a>
-            <a href="#" className="hover:text-[#DFBF85] transition-colors">Title Assurance Policy</a>
+          <div className="flex items-center gap-4 sm:gap-6">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onOpenBlueprint) onOpenBlueprint();
+              }}
+              className="hover:text-[#D4BA7E] transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-[#3A5063]">•</span>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onOpenBlueprint) onOpenBlueprint();
+              }}
+              className="hover:text-[#D4BA7E] transition-colors"
+            >
+              Terms of Service
+            </a>
+            <span className="text-[#3A5063]">•</span>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onOpenBlueprint) onOpenBlueprint();
+              }}
+              className="hover:text-[#D4BA7E] transition-colors"
+            >
+              Trust & Safety
+            </a>
           </div>
-
         </div>
 
       </div>
     </footer>
   );
 }
+
