@@ -3,7 +3,7 @@ import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { ChevronUp } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import BrandStatement from './components/BrandStatement';
+import WhyChooseSecureStay from './components/WhyChooseSecureStay';
 import FeaturedProperties from './components/FeaturedProperties';
 import CuratedCollections from './components/CuratedCollections';
 import WhySecureStay from './components/WhySecureStay';
@@ -107,8 +107,8 @@ export default function App() {
         currentCurrency={currentCurrency}
       />
 
-      {/* 2. Brand Statement & Animated Counters */}
-      <BrandStatement />
+      {/* 2. Why Choose Secure Stay - Core Value Propositions */}
+      <WhyChooseSecureStay onOpenEnquiry={() => setIsEnquiryOpen(true)} />
 
       {/* 3. Featured Properties Editorial Grid */}
       <FeaturedProperties
